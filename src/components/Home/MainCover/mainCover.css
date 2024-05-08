@@ -1,0 +1,119 @@
+.main-cover {
+  width: 100%;
+  height: 370px;
+  position: relative;
+}
+
+.cover-container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.first-layer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  padding: 100px 20px 0;
+  line-height: 1.1;
+}
+
+.first-layer h1 {
+  color: #ffffff;
+  font-size: 45px;
+}
+
+.first-layer p {
+  color: #ffffff;
+  font-size: 35px;
+  margin-bottom: 25PX;
+}
+
+.first-layer form {
+  width: 100%;
+  height: 45px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-layer form fieldset {
+  outline: none;
+  border: none;
+}
+
+.first-layer form input {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #969696;
+}
+
+.first-layer form input::placeholder {
+  font-size: 20px;
+  color: #969696;
+}
+
+.first-layer form button {
+  width: 100px;
+  height: 100%;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, rgb(16, 223, 154) 0%, rgba(0, 212, 255, 1) 100%);
+  font-size: 15px;
+  font-weight: 800;
+}
+.first-layer form fieldset {
+  flex-grow: 1;
+}
+
+.first-layer form button a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.second-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  z-index: 2;
+  background: rgb(22, 36, 78);
+  background: linear-gradient(90deg, rgba(22, 36, 78, 0.7567401960784313) 3%, rgba(255, 255, 255, 0.3785889355742297) 100%);
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .first-layer {
+    padding-top: 120px;
+}
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

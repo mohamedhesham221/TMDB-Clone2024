@@ -1,0 +1,311 @@
+/*search page component*/
+.search-page {
+  padding-top: 60px;
+}
+
+.search-page form {
+  height: 35px;
+  padding: 6px;
+}
+
+.search-page input,
+.search-page fieldset,
+.search-page form button {
+  outline: none;
+  border: none;
+}
+
+.search-page input,
+.search-page input::placeholder {
+  color: #969696;
+  font-size: 15px;
+}
+
+.search-page form button {
+  margin: 0 10px;
+  background-color: transparent;
+}
+
+.search-result {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.widget p {
+  height: 35px;
+  background-color: #00c2e9;
+  padding: 8px 0 0 15px;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.widget ul {
+  padding: 10px 5px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  overflow-x: scroll;
+  list-style: none;
+}
+
+.widget ul span {
+  display: inline-block;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  width: 35px;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.active {
+  color: #00c2e9;
+}
+
+.active-span {
+  color: #000000;
+  border: 1px solid #00c2e9 !important;
+}
+
+.search-items {
+  margin-top: 30px;
+  padding: 0 25px;
+}
+
+.search-items .card {
+  margin-bottom: 30px;
+  display: flex;
+}
+.card-image {
+  width: 27%;
+  height: 155px;
+}
+
+.card-image img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+}
+
+.card-content {
+  width: 73%;
+  height: 155px;
+  box-shadow: 0 3px 6px #e7e7e7;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #e7e7e7;
+  padding: 25px 10px 5px;
+}
+
+.card-content-title {
+  font-size: 13px;
+  color: #000000;
+  font-weight: 800;
+}
+
+.card-content-release {
+  color: #969696;
+  font-size: 15px;
+}
+
+.card-content-overview {
+  margin-top: 20px;
+  font-size: 14px;
+  width: 210px;
+}
+
+.person-card {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.person-card-image {
+  width: 20%;
+  height: 60px;
+  margin-right: 20px;
+  background-color: #dadada;
+  border-radius: 10px;
+  display: grid;
+  justify-items: center;
+  place-content: center;
+}
+
+.person-card-image img {
+  width: 50%;
+}
+
+.person-card-content {
+  width: 80%;
+}
+
+.person-department,
+.person-known-for {
+  font-size: 14px;
+  white-space: break-spaces;
+}
+
+.person-name,
+.person-department {
+  font-weight: 800;
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .search-result {
+    flex-direction: row;
+  }
+  search-page form {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dadada;
+  }
+
+  .widget {
+    width: 45%;
+    margin-left: 20px;
+    border: none;
+  }
+
+  .widget p {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .widget ul {
+    flex-wrap: wrap;
+    border: 1px solid #dadada;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .widget ul li {
+    width: 100%;
+    height: 50px;
+    color: #000;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .widget ul li span {
+    background-color: #dadada;
+    border: 1px solid transparent;
+  }
+
+  .search-items {
+    width: 55%;
+    margin: 0;
+  }
+
+  .active {
+    color: currentColor;
+    background-color: #dadada;
+  }
+
+  .active-span {
+    background-color: #fff !important;
+    border: 1px solid transparent !important;
+  }
+  .genres hr {
+    top: 560px;
+  }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .widget {
+    width: 35%;
+  }
+
+  .search-items {
+    width: 65%;
+  }
+
+  .card-image {
+    width: 18%;
+  }
+
+  .card-content {
+    width: 82%;
+  }
+
+  .card-content-title,
+  .card-content-release,
+  .card-content-overview {
+    font-size: 20px;
+  }
+
+  .card-content-overview {
+    width: 100%;
+  }
+  .card-content-overview {
+    margin-top: 5px;
+  }
+
+  .person-card-image {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+  }
+
+  .person-card-image img {
+    width: 100%;
+  }
+
+  .person-name {
+    font-size: 20px;
+  }
+
+  .person-card-content {
+    padding-top: 10px;
+  }
+
+  .person-department,
+  .person-known-for {
+    font-size: 15px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .widget {
+    width: 25%;
+  }
+
+  .search-items {
+    width: 75%;
+  }
+
+  .card-image {
+    width: 12%;
+    height: 180px;
+  }
+
+  .card-content {
+    width: 88%;
+    height: 180px;
+  }
+
+  .person-card-image {
+    height: 80px;
+  }
+
+  .widget-filter {
+    width: 20%;
+  }
+
+  .posters-list {
+    width: 80%;
+
+  }
+
+  .genres hr {
+    top: 555px;
+  }
+}

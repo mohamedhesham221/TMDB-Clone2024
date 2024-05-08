@@ -1,5 +1,22 @@
 # Getting Started with Create React App
 
+  ```js
+  /*trending https://api.themoviedb.org/3/trending/all/<<dayORweak>>?api_key */
+  /*serach https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&query=<<query></query>>&language=en-US&page=1&include_adult=false */
+  const API_KEY ="c10853c26d67ce724f0341b818f7d452";
+
+    const getIT = async () => {
+      const res = await fetch(`
+      https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=john&language=en-US&page=1&include_adult=false`);
+      try {
+        const data = await res.json();
+        console.log(data);
+      } catch (error) {
+        console.log(error)
+      }
+    }
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

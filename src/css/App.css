@@ -1,0 +1,36 @@
+/*variables*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/*Reset Document*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.page-title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.page-body {
+  padding: 80px 10px 0 10px;
+}
+
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="error"></div> */
+
+.loader,
+.error {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+.error {
+  color: #ff0000;
+}

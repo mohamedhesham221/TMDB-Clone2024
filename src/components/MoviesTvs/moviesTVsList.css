@@ -1,0 +1,75 @@
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  
+  
+  .posters-list-wrapper {
+    display: flex;
+  gap: 15px;
+}
+
+
+.posters-list {
+  width: 70%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content:center;
+  margin: 0;
+}
+
+.posters-list-wrapper .poster {
+  width: 150px;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+  border-radius: 5px;
+}
+
+.posters-list .poster:first-child {
+  margin: 0;
+}
+
+.posters-list .poster img {
+  width: 100%;
+  height: 100%;
+}
+
+.posters-list .progress-bar {
+  width: 35px;
+  height: 35px;
+  
+  
+}
+
+.posters-list .progress-bar .rate {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.posters-list .poster-title {
+  font-size: 16px;
+  white-space: break-spaces;
+}
+
+.posters-list .poster-date {
+  font-size: 14px;
+}
+
+.posters-list .poster_name_date {
+  padding-left: 10px;
+  padding-bottom: 20px;
+}
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .posters-list .progress-bar {
+    width: 40px;
+    height: 40px;
+  }
+}

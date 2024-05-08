@@ -1,0 +1,48 @@
+/*movies tvs style*/
+.posters-list {
+  margin-top: 20px;
+}
+
+.posters-list .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.posters-list .card-image {
+  width: 27%;
+  height: 155px;
+}
+
+.posters-list  .card-image img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+}
+
+.posters-list  .card-content {
+  width: 73%;
+  height: 155px;
+  box-shadow: 0 3px 6px #e7e7e7;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #e7e7e7;
+  padding: 25px 10px 5px;
+}
+
+.posters-list  .card-content-title {
+  font-size: 13px;
+  color: #000000;
+  font-weight: 800;
+}
+
+.posters-list  .card-content-release {
+  color: #969696;
+  font-size: 15px;
+}
+
+.posters-list  .card-content-overview {
+  margin-top: 20px;
+  font-size: 14px;
+  width: 210px;
+}

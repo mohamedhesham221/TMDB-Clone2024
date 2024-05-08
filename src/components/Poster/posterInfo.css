@@ -1,0 +1,840 @@
+/*poster page style*/
+.poster-page {
+  padding: 60px 0 0;
+}
+
+.poster-layer {
+  width: 100%;
+  height: 180px;
+  background: no-repeat center center / cover linear-gradient(90deg, rgba(2, 0, 36, 1) 16%, rgba(9, 9, 121, 0) 50%, rgba(0, 212, 255, 0) 100%);
+  ;
+  position: absolute;
+  /* left: -90%;
+  box-shadow: 0 0 5px 5px linear-gradient(90deg, rgba(2, 0, 36, 1) 16%, rgba(9, 9, 121, 0) 50%, rgba(0, 212, 255, 0) 100%);; */
+}
+
+.poster-head {
+  width: 100%;
+  height: 180px;
+}
+
+.poster-content {
+  position: relative;
+}
+
+.poster-content img {
+  max-width: 100%;
+  width: 90px;
+  height: auto;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.poster-content section {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  right: 0;
+  padding-top: 15px;
+  color: #ffffff;
+  background-color: rgb(2, 0, 46)
+}
+
+.poster-page .poster-title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.poster-page .poster-title span:first-child,
+.poster-page .poster-title span:last-child {
+  letter-spacing: 1px;
+}
+
+.poster-page .poster-title span:last-child {
+  font-size: 15px;
+  color: #969696;
+}
+
+.user-score_trailer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.user-score_trailer .divider {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  margin: 0 40px;
+  background-color: #ffffff;
+}
+
+.user-score_trailer .progress-bar {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  margin-right: 5px;
+}
+
+.user-score_trailer .rate {
+  top: 4px;
+  left: 0;
+  font-size: 15px;
+}
+
+.user-score_trailer button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+}
+
+.user-score_trailer button svg {
+  margin-right: 5px;
+}
+
+.poster-release-genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(2, 0, 36, 1);
+}
+
+.poster-release,
+.poster-genres {
+  display: flex;
+  justify-content: center;
+
+}
+
+.poster-release {
+  order: 1;
+}
+
+.poster-runtime {
+  order: 2;
+}
+
+.poster-genres {
+  order: 3;
+  width: 100%;
+}
+
+.poster-genres svg {
+  display: none;
+}
+
+.poster-release svg {
+  width: 4px;
+  height: auto;
+}
+
+.poster-tagline_overview {
+  padding: 20px;
+}
+
+.poster-tagline_overview .poster-tagline {
+  color: #ffffff;
+  opacity: .6;
+}
+
+.poster-overview-head {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.poster-overview-content {
+  font-size: 15px;
+}
+
+.poster-credits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 20px;
+}
+
+.poster-director,
+.poster-writer {
+  width: 50%;
+}
+
+:is(.poster-director, .poster-writer) .name {
+  font-weight: 800;
+}
+
+:is(.poster-director, .poster-writer) .job {
+  font-size: 12px;
+}
+
+.poster-body {
+  padding: 20px 0 0;
+}
+
+.poster-body hr {
+  height: 1px;
+  background-color: #e7e7e7;
+}
+
+.section-header {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.poster-media-cast,
+.poster-media-reviews,
+.poster-current-season {
+  padding: 0 30px 0;
+}
+
+.poster-season {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 3px 6px #e7e7e7;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+}
+
+.season-img {
+  display: none;
+}
+
+.season-content {
+  padding: 10px 15px;
+}
+
+.season-head {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.season-info {
+  font-weight: 800;
+}
+
+.season-rate {
+  background-color: #000;
+  color: #fff;
+  padding: 1px 8px;
+  border-radius: 8px;
+  font-size: 14px;
+
+  margin-right: 5px;
+}
+
+.season-overview {
+  margin: 15px 0;
+}
+
+.season-last-ep-date {
+  font-size: 13px;
+}
+
+.season-last-ep-date span:first-of-type {
+  margin: 0 5px;
+}
+
+.episode-type {
+  width: 120px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.episode-type span {
+  display: inline-block;
+  margin: 0 !important;
+}
+
+.episode-type span:last-child {
+  text-transform: capitalize;
+}
+
+.poster-cast {
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  align-items: stretch;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.actor {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #dbdada;
+  border: 1px solid #e7e7e7;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
+.actor img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.cast-name {
+  font-weight: 800;
+}
+
+.cast-role {
+  font-size: 12px;
+}
+
+.cast-name,
+.cast-role {
+  margin-left: 5px;
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #dbdada;
+  margin: 25px 0;
+}
+
+.section-header button {
+  border: none;
+  outline: none;
+  background: transparent;
+  float: right;
+  font-size: 15px;
+  font-weight: 800;
+  border-bottom: 4px solid #032541;
+}
+
+.poster-review-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.author-profile {
+  width: 15%;
+  max-width: 100%;
+}
+
+.author-profile img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.author-name {
+  width: 85%;
+  text-align: center;
+}
+
+.author-name p:first-child {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.author-name p:last-child {
+  font-size: 15px;
+}
+
+.author-name .rating {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #081C22;
+  color: #ffffff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.author-name .rating~span {
+  font-weight: 800;
+}
+
+.poster-review-content {
+  margin-top: 25px;
+}
+
+.poster-review-content pre {
+  white-space: break-spaces;
+}
+
+.poster-review-content button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.section-header-navigator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poster-media-videos .section-header {
+  width: fit-content;
+  padding-left: 20px;
+}
+
+.poster-media-videos .section-navigator {
+  width: 160px;
+  padding-right: 20px;
+}
+
+.section-navigator ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section-navigator ul li {
+  list-style: none;
+  position: relative;
+}
+
+.section-navigator ul li button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.section-navigator ul button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  height: 3px;
+}
+
+.section-navigator ul li:first-child {
+  order: 2;
+}
+
+.section-navigator ul li:nth-child(2) {
+  order: 1;
+}
+
+.section-navigator ul li:nth-child(3) {
+  order: 3;
+}
+
+.section-navigator ul li:last-child {
+  order: 4;
+}
+
+.active-item::after {
+  background-color: #032541 !important;
+}
+
+.media-row {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 160px;
+  overflow-x: scroll;
+  margin-top: 20px;
+}
+
+.media-row iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+
+}
+
+.media-row .media-backdrop {
+  width: 100%;
+  height: 100%;
+}
+
+.media-row .media-poster {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.poster-widget {
+  margin-top: 30px;
+  padding: 30px 25px 20px;
+}
+
+.poster-widget .social-links,
+.poster-widget .keywords-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.social-links li {
+  width: 25px;
+  height: auto;
+}
+
+.social-links li img {
+  width: 100%;
+  height: 100%;
+}
+
+:is(.poster-status, .poster-language, .poster-budget,
+  .poster-budget, .poster-revenue, .poster-keywords,
+  .poster-network, .poster-type) p:first-child {
+  font-weight: 800;
+}
+
+.poster-widget div {
+  margin-bottom: 20px;
+}
+
+.poster-widget .poster-keywords {
+  margin: 30px 0 0;
+}
+
+.poster-keywords .keywords-list {
+  margin: 15px 0 0;
+  gap: 5px;
+}
+
+.keywords-list li {
+  width: fit-content;
+  height: fit-content;
+  background-color: #96969652;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 14px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .poster-media-videos .section-navigator {
+    width: 90%;
+  }
+
+  .poster-media-videos .section-header {
+    width: 10%;
+    margin: 0;
+  }
+
+  .section-navigator ul {
+    margin-left: 25px;
+    justify-content: flex-start;
+    gap: 25px;
+  }
+
+  .section-navigator ul li:first-child {
+    order: 1;
+  }
+
+  .section-navigator ul li:nth-child(2) {
+    order: 2;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .poster-page {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .poster-body {
+    width: 75%;
+  }
+
+  .poster-widget {
+    width: 25%;
+  }
+
+  .poster-head,
+  .poster-layer {
+    height: 450px;
+  }
+
+  .poster-layer {
+    background-color: rgba(9, 9, 121, 0);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 25%, rgba(9, 9, 121, 0.3981967787114846) 100%);
+  }
+
+  .poster-release-genres {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background: transparent;
+  }
+
+  .poster-release {
+    order: 1;
+  }
+
+  .poster-runtime {
+    order: 3;
+  }
+
+  .poster-genres {
+    width: fit-content;
+    order: 2;
+  }
+
+  .poster-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .poster-content section {
+    position: static;
+  }
+
+  .poster-page .poster-title {
+    font-size: 40px;
+    text-align: left;
+  }
+
+  .poster-content section,
+  .poster-release,
+  .poster-genres {
+    background: transparent;
+  }
+
+  .poster-content img {
+    width: 25vw;
+  }
+
+  .poster-content article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .user-score_trailer svg {
+    width: 15px;
+  }
+
+  .user-score_trailer .progress-bar {
+    width: 65px;
+    height: 65px;
+  }
+
+  .user-score_trailer .rate {
+    top: 12px;
+    font-size: 20px;
+  }
+
+  .user-score_trailer .rate sup {
+    font-size: 10px;
+  }
+
+  .user-score_trailer button {
+    font-size: 15px;
+    margin-left: 5px;
+  }
+
+  .user-score_trailer .divider {
+    display: none;
+  }
+
+  .poster-release {
+    order: 1;
+  }
+
+  .poster-genres {
+    order: 2;
+    align-items: center;
+  }
+
+  .poster-runtime {
+    order: 3;
+  }
+
+  .user-score_trailer {
+    order: 4;
+    width: 100%;
+  }
+
+  .poster-tagline_overview {
+    order: 5;
+    padding: 0;
+  }
+
+  .poster-credits {
+    order: 6;
+    padding: 0;
+  }
+
+  .poster-tagline {
+    font-size: 18px;
+  }
+
+  .user-score_trailer,
+  .poster-release,
+  .poster-genres {
+    justify-content: left;
+  }
+
+  .poster-content svg {
+    width: 5px;
+    margin: 0 10px;
+  }
+
+  .poster-genres svg {
+    display: block;
+  }
+
+  .user-score_trailer svg {
+    width: 15px;
+  }
+
+  .poster-page .poster-title span:last-child {
+    font-size: 40px;
+  }
+
+  .poster-credits {
+    width: 50%;
+    margin-top: 20px;
+  }
+
+  .section-header {
+    font-size: 25px;
+  }
+  
+  
+  .season-img {
+    width: 20%;
+    display: block;
+  }
+  .season-content {
+    width: 80%;
+  }
+
+  .season-img img {
+    max-width: 100%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .season-last-ep-date {
+    font-size: 15px;
+  }
+  .section-header button {
+    float: unset;
+    margin-left: 50px;
+    font-size: 20px;
+  }
+
+  .poster-review-author {
+    margin-top: 5px;
+    justify-content: flex-start;
+  }
+
+  .poster-review-author .author-profile {
+    width: 5vw;
+    margin-right: 15px;
+  }
+
+  .poster-review-author .author-name {
+    text-align: start;
+  }
+
+  .poster-review {
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 0 10px 0px #e3e3e3;
+    padding: 0 10px 15px;
+  }
+
+  .poster-review-content {
+    margin-top: 5px;
+  }
+
+  .actor img {
+    width: 150px;
+    height: 160px;
+  }
+
+  .section-navigator ul li button {
+    font-size: 16px;
+  }
+
+  .section-navigator ul {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 25px;
+  }
+
+  .media-row {
+    grid-template-rows: 250px;
+    padding: 0 20px;
+  }
+
+  .media-row .media-backdrop {
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-row .media-poster {
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-row iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+  .poster-head,
+  .poster-layer {
+    height: 500px;
+  }
+
+  .poster-content {
+    gap: 10px;
+    padding: 0 25px;
+    align-items: center;
+  }
+
+  .poster-overview-head {
+    font-size: 20px;
+  }
+
+  .poster-overview-content {
+    font-size: 15px;
+  }
+
+  .poster-release,
+  .poster-genres,
+  .poster-runtime {
+    font-size: 20px;
+  }
+
+  .poster-credits .name {
+    font-size: 18px;
+  }
+
+  .poster-credits .job {
+    font-size: 12px;
+  }
+}
