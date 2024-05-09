@@ -146,4 +146,7 @@ const ActorBiography = ({ actor }) => {
       </div></>
   )
 }
+ActorBiography.propTypes = {
+  actor : PropTypes.object.isRequired
+}
 export default ActorBiography;
