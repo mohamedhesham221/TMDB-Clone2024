@@ -32,7 +32,7 @@ const Trailer = ({ trailer, setPlayStatue, isPlay }) => {
   )
 }
 Trailer.propTypes = {
-  trailer: PropTypes.object.isRequired,
+  trailer: PropTypes.object,
   setPlayStatue: PropTypes.func.isRequired,
   isPlay: PropTypes.bool.isRequired
 }

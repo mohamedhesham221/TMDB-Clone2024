@@ -27,7 +27,7 @@ const PostersRow = ({ posters, sectionName, error, isLoading }) => {
 PostersRow.propTypes = {
   posters: PropTypes.array.isRequired,
   sectionName: PropTypes.string.isRequired,
-  error: PropTypes.bool.isRequired,
+  error: PropTypes.bool,
   isLoading: PropTypes.bool.isRequired,
 }
 export default PostersRow;
