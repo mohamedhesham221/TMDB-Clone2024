@@ -39,9 +39,9 @@ const PopularTvsMovs = () => {
         allItems[i] = allItems[j]
         allItems[j] = x;
       }
-      // getting just 20 items
-      const minimize = allItems.slice(0, 20)
       (function handlePosters ()  {
+        // getting just 20 items
+        const minimize = allItems.slice(0, 20)
         switch (currentState) {
           case 'movie':
             setPopularPosters(minimize.filter((item) => item.title))
