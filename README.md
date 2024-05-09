@@ -49,7 +49,10 @@ TMDB Clone is a web application built with React that aims to replicate the func
 
 ## Screenshots
 
-Insert screenshots of your application's interface here.
+![Home screencapture](./src/assets/imgs/screencapture-home.png)
+![Movie screencapture](./src/assets/imgs/screencapture-movie.png)
+![Actor screencapture](./src/assets/imgs/screencapture-people-actor.png)
+![TV-shows screencapture](./src/assets/imgs/screencapture-tv-shows.png)
 
 ## Links
 
