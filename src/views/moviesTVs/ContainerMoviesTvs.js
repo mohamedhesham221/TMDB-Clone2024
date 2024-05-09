@@ -65,7 +65,7 @@ const ContainerMoviesTvs = () => {
     <>
     <main>
       <div className="page-body">
-      <h1 className="page-title">{parentPath === "movie" ? childPathsMovie[childPath] + " Movies" : childPathsTv[childPath] + " TV Shows"}</h1>
+      <h1 className="page-title">{parentPath === "movies" ? childPathsMovie[childPath] + " Movies" : childPathsTv[childPath] + " TV Shows"}</h1>
       <MoviesTVsList dataList={dataList} genres = {genresArr} parentPath={parentPath} error={error} isLoading={isLoading}/>
       </div>
     </main>
