@@ -84,6 +84,7 @@ const MoviesTVs = ({ dataList, genres, parentPath, error, isLoading }) => {
     })()
     setPostersList(dataList)
   }, [dataList, genresID.length, maxValue, minValue, startDate.length])
+  console.log(postersList)
   return (
     <>
       <div className="posters-list-wrapper">

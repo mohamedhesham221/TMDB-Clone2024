@@ -9,7 +9,7 @@ const PosterInfo = () => {
   //Component logic ...
 
   const { parent, id } = useParams();
-  const [poster, setPoster] = useState({})
+  const [poster, setPoster] = useState("")
   const rate = poster.vote_average === undefined ? "" : Math.round(poster?.vote_average * 10);
   const [fullYear, setFullYear] = useState();
   const [currentColor, setCurrentColor] = useState();
@@ -41,7 +41,7 @@ const PosterInfo = () => {
     //Function to render TV show information depends on ID
     const getTvDetails = async (tvId) => {
       try {
-        const res = await fetch(`${API.baseURL}tv/${tvId}?api_key=${API.key}&append_to_response=videos,credits,images,keywords,external_ids,reviews`, { signal })
+        const res = await fetch(`${API.baseURL}movie/${tvId}?api_key=${API.key}&append_to_response=videos,credits,images,keywords,external_ids,reviews`, { signal })
         const tv = await res.json();
         setPoster(tv);
       } catch (error) {
