@@ -52,7 +52,7 @@ const PosterInfoWidget = () => {
         <aside>
           <ul className="social-links">
             {
-              socialIcons.map((icon, index) => {
+              socialIcons?.map((icon, index) => {
                 return icon.logoID && <li key={index}>
                   <a href={icon.rootPath + icon.logoID} target="_blank" rel="noreferrer">
                     <img src={icon.logo} alt={icon.logoTitle} />
@@ -74,13 +74,13 @@ const PosterInfoWidget = () => {
             <p>Original Language</p>
             {parent === "movie" ?
               <p>{originalLangs[poster?.original_language]}</p> :
-              <p>{poster?.languages.map((lang, index) => poster?.languages.length - 1 === index ? originalLangs[lang] : originalLangs[lang] + ", ")}</p>
+              <p>{poster?.languages?.map((lang, index) => poster?.languages?.length - 1 === index ? originalLangs[lang] : originalLangs[lang] + ", ")}</p>
             }
           </div>
           {parent === "tv" ?
           <div className="poster-network">
             <p>Networks</p>
-            {poster?.networks.length && poster?.networks.map((network, index) => 
+            {poster?.networks?.length && poster?.networks.map((network, index) => 
             <img src={"https://media.themoviedb.org/t/p/h30/"+network.logo_path} alt={network.name} key={index}/>)}
           </div>
           :

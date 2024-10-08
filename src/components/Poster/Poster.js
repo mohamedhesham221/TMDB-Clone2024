@@ -48,7 +48,6 @@ const Poster = ({ imgPath, poster}) => {
       setCurrentBaseColor(colors.hightRateBase)
     }
   }, [rate])
-
   return (
     <>
       <div className="poster">

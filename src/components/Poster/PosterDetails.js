@@ -33,14 +33,6 @@ const PosterDetails = ({ parent, poster, fullYear,
   )
 }
 PosterDetails.propTypes = {
-  parent: PropTypes.string.isRequired,
-  poster: PropTypes.object.isRequired,
-  fullYear: PropTypes.string.isRequired,
-  currentColor: PropTypes.string.isRequired,
-  currentBaseColor: PropTypes.string.isRequired,
-  rate: PropTypes.number.isRequired,
-  sendToTrailerComp: PropTypes.func.isRequired,
-  sectionRef: PropTypes.object.isRequired
-
+ 
 }
 export default PosterDetails;

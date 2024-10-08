@@ -17,7 +17,7 @@ const PosterInfoBody = () => {
   const videos = poster.videos?.results;
   const cast = poster.credits?.cast.slice(0, 10);
   const initMediaVideo = poster.videos?.results?.filter((t) => t.name.includes("Official Trailer")).map(t => t.key);
-  const initMediaBackdrop = poster.images?.backdrops[0].file_path;
+  const initMediaBackdrop = poster.images?.backdrops[0]?.file_path;
   const initMediaPoster = poster.images?.posters[0].file_path;
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'Novmber', 'December']
   const profileReviewer = require('../../assets/imgs/user-glyph.svg').default;
@@ -28,7 +28,6 @@ const PosterInfoBody = () => {
   const [randomReview, setRandomReview] = useState();
   const [dynamicHeight, setDynamicHeight] = useState();
   const [counter, setCounter] = useState(1);
-
 
   useEffect(() => {
     //Function to make section height dynamic depends on poster description content
