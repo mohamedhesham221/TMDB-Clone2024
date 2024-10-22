@@ -84,6 +84,7 @@
 .card-image {
   width: 27%;
   height: 155px;
+  cursor: pointer;
 }
 
 .card-image img {
