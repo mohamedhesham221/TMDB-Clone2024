@@ -10,7 +10,7 @@ const ContainerMoviesTvs = () => {
   const [dataList, setDataList] = useState([]);
   const [genresArr, setGenres] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] =  useState(null);
+  const [error, setError] =  useState(false);
 
   const childPathsMovie = {
     "popular": "Popular",

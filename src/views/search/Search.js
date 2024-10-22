@@ -17,7 +17,7 @@ const Search = () => {
   const [tvsNums, setTvsNums] = useState(0);
   const [peopleNums, setPeopleNums] = useState(0)
   const [mediaType, setMediaType] = useState('tvs');
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
     const abortController = new AbortController();
@@ -25,7 +25,7 @@ const Search = () => {
     //Function to render search result and filter it depends on media type
     (async function getQueryResult () {
       try {
-      const res = await fetch(`${API.baseURL}/search/multi?query=${currentQuery}&page=${pageNum}&api_key=${API.key}`,{signal});
+      const res = await fetch(`${API.baseURL}search/multi?query=${currentQuery}&include_adult=false&language=en-US&page=${pageNum}&api_key=${API.key}`,{signal});
       const data = await res.json();
       setSearchResult(data.results)
       const categoryLens = {

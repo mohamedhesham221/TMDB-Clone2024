@@ -35,7 +35,7 @@ const PosterDetails = ({ parent, poster, fullYear,
 PosterDetails.propTypes = {
   parent: PropTypes.string.isRequired,
   poster: PropTypes.object.isRequired,
-  fullYear: PropTypes.string.isRequired,
+  fullYear: PropTypes.number.isRequired,
   currentColor: PropTypes.string.isRequired,
   currentBaseColor: PropTypes.string.isRequired,
   rate: PropTypes.number.isRequired,

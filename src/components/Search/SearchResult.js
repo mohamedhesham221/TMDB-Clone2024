@@ -52,12 +52,12 @@ const SearchResult = ({ mediaType, setMediaType, tvsNums, moviesNums, peopleNums
           </aside>
         </div>
         <div className="search-items">
-          {(error !== null || !searchResult.length) && <div className="error">{error} <br />
+          {(error !== null && !searchResult.length) && <div className="error">{error} <br />
             there are no movies that matched your query</div>}
           {isLoading && <div className="loader">Is Loading, please wait . . .</div>}
           {
             mediaType === 'tvs' ?
-              searchResult.filter((item) => item.media_type === 'tv').map(
+              searchResult?.filter((item) => item.media_type === 'tv').map(
                 (item) => <article key={item.id}>
                   <div className="card" onClick={() => getDetails(item)}>
                     <div className="card-image">
@@ -120,7 +120,7 @@ SearchResult.propTypes = {
   moviesNums: PropTypes.number.isRequired,
   peopleNums: PropTypes.number.isRequired,
   searchResult: PropTypes.array.isRequired,
-  error: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired
 }
 export default SearchResult;

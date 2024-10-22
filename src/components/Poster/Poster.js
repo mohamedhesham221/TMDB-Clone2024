@@ -11,8 +11,8 @@ const Poster = ({ imgPath, poster}) => {
   // Component logic....
   const navigate = useNavigate();
   const rate = Math.round(poster.vote_average * 10);
-  const [currentColor, setCurrentColor] = useState();
-  const [currentBaseColor, setCurrentBaseColor] = useState();
+  const [currentColor, setCurrentColor] = useState("");
+  const [currentBaseColor, setCurrentBaseColor] = useState("");
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const releaseDate = new Date(poster.release_date);
   const firstAirDate = new Date(poster.first_air_date);
