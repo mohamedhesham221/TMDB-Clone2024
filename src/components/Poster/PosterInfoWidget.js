@@ -46,7 +46,6 @@ const PosterInfoWidget = () => {
       logoID: social?.imdb_id
     }
   ]
-  console.log(poster)
   return (
     <>
       <div className='poster-widget'>

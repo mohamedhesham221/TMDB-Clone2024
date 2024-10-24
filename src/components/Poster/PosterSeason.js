@@ -19,7 +19,6 @@ const PosterSeason = ({parent, poster, months}) => {
     
     })()
   },[parent, poster?.seasons])
-  console.log(currentSeason)
   return(
     <>
     {parent === "tv" ?

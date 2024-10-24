@@ -32,7 +32,7 @@
 
 .poster-content section {
   position: absolute;
-  top: 180px;
+  top: 179px;
   left: 0;
   right: 0;
   padding-top: 15px;
@@ -86,12 +86,41 @@
   left: 0;
   font-size: 15px;
 }
+.user-score_trailer .watch-trailer {
+  position: relative;
+}
+.user-score_trailer .watch-trailer p {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  cursor: pointer;
+}
 
-.user-score_trailer button {
+.user-score_trailer .watch-trailer ul {
+  width: 100%;
+  height: fit-content;
+  list-style: none;
+  text-align: left;
+  position: absolute;
+  top: 40px;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  transition: all .5s linear;
+}
+.fade-in-platforms {
+  top: 20px !important;
+  opacity: 1 !important;
+}
+.user-score_trailer .watch-trailer img {
+  max-width: 100%;
+  margin: 0;
+}
+.user-score_trailer .watch-trailer ul button {
   border: none;
   outline: none;
   background: transparent;
-  color: #ffffff;
+  cursor: pointer;
 }
 
 .user-score_trailer button svg {
@@ -718,12 +747,13 @@
   .section-header {
     font-size: 25px;
   }
-  
-  
+
+
   .season-img {
     width: 20%;
     display: block;
   }
+
   .season-content {
     width: 80%;
   }
@@ -733,9 +763,11 @@
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
   }
+
   .season-last-ep-date {
     font-size: 15px;
   }
+
   .section-header button {
     float: unset;
     margin-left: 50px;
