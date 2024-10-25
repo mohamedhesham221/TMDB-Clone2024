@@ -2,7 +2,6 @@ import "./popularTvsMovies.css"
 import { useEffect, useState } from "react";
 import SwitcherBtn from "../SwitcherBtn/SwitcherBtn";
 import PostersRow from "../PostersRow/PostersRow";
-import API from '../../../Variables/vars';
 
 // Component to render popular movies and TV shows posters
 const PopularTvsMovs = () => {
@@ -28,8 +27,8 @@ const PopularTvsMovs = () => {
     }
   ]
   useEffect(() => {
-    const urls = [`https://api.themoviedb.org/3/tv/popular?api_key=${API.key}`,
-    `https://api.themoviedb.org/3/movie/popular?api_key=${API.key}`]
+    const urls = [`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}`,
+    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}`]
     Promise.all(urls.map(url => fetch(url).then(res => res.json()))).then(([movies, tvs]) => {
       const allItems = [movies.results, tvs.results].flat()
       // detecting a random poster items

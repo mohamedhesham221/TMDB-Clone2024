@@ -17,7 +17,7 @@ const People = () => {
     //Function to get popular people date
     (async function getPopularPeople() {
       try {
-        const response = await fetch(`${API.baseURL}person/popular?api_key=${API.key}&page=${pageNum}`,{signal})
+        const response = await fetch(`${API.baseURL}person/popular?api_key=${process.env.REACT_APP_API_KEY}&page=${pageNum}`,{signal})
         const peopleData = await response.json();
         setPopularPeople(peopleData.results);
       } catch (error) {

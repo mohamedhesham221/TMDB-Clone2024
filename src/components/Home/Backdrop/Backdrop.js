@@ -15,7 +15,7 @@ const Backdrop = ({ item, bgRef, setTrailer, setPlayStatue }) => {
   useEffect(() => {
     const getVideo = async () => {
       try {
-        const res = await fetch(`${API.baseURL}${item.release_date ? 'movie' : 'tv'}/${item.id}/videos?api_key=${API.key}`);
+        const res = await fetch(`${API.baseURL}${item.release_date ? 'movie' : 'tv'}/${item.id}/videos?api_key=${process.env.REACT_APP_API_KEY}`);
         const data = await res.json()
         setBackdropVideo(data.results);
       } catch (error) {

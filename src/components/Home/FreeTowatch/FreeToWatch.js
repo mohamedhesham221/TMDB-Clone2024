@@ -2,7 +2,6 @@ import "./freeToWatch.css";
 import { useEffect, useState } from "react";
 import SwitcherBtn from "../SwitcherBtn/SwitcherBtn";
 import PostersRow from "../PostersRow/PostersRow";
-import API from '../../../Variables/vars';
 
 // Component to render free to watch section
 const FreeToWatch = () => {
@@ -25,8 +24,8 @@ const FreeToWatch = () => {
   ]
   useEffect(() => {
     const urls = [
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=${API.key}`,
-      `https://api.themoviedb.org/3/tv/airing_today?api_key=${API.key}`];
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}`,
+      `https://api.themoviedb.org/3/tv/airing_today?api_key=${process.env.REACT_APP_API_KEY}`];
     Promise.all(urls.map((url) => fetch(url).then((res) => res.json()))).then(([movies, tvs]) => {
       if (currentState === 'movies') {
         setFreeWatch(movies.results);

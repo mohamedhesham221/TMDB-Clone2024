@@ -29,7 +29,7 @@ const TrendingRow = () => {
     const signal = abortController.signal;
     (async function getTrendingData() {
       try {
-        const res = await fetch(`${API.baseURL}trending/all/${currentState === 'today'? 'day' : 'week'}?api_key=${API.key}`,{signal});
+        const res = await fetch(`${API.baseURL}trending/all/${currentState === 'today'? 'day' : 'week'}?api_key=${process.env.REACT_APP_API_KEY}`,{signal});
         const data = await res.json()
         setTrendingPosters(data.results)
       } catch (error) {

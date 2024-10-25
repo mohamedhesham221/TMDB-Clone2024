@@ -31,7 +31,7 @@ const MainCover = () => {
     const signal = abortController.signal;
     (async function fetchData() {
       try {
-        const res = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${API.key}`,{signal});
+        const res = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`,{signal});
         const data = await res.json();
         const randomPath = Math.floor(Math.random() * data.results.length);
         // setting random background path

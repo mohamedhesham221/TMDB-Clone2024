@@ -18,7 +18,7 @@ const PersonInfo = () => {
 //Function to render person information
     (async function getActorInfo() {
       try {
-        const res = await fetch(`${API.baseURL}person/${id}?api_key=${API.key}&append_to_response=external_ids,movie_credits,tv_credits`, { signal })
+        const res = await fetch(`${API.baseURL}person/${id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=external_ids,movie_credits,tv_credits`, { signal })
         const data = await res.json();
         setActorData(data);
       } catch (error) {

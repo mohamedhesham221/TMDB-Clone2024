@@ -26,7 +26,7 @@ const PosterInfo = () => {
     //Function to render movie information depends on ID
     const getMovieDetails = async (movieId) => {
       try {
-        const res = await fetch(`${API.baseURL}movie/${movieId}?api_key=${API.key}&append_to_response=videos,credits,images,keywords,external_ids,reviews`, { signal })
+        const res = await fetch(`${API.baseURL}movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos,credits,images,keywords,external_ids,reviews`, { signal })
         const movie = await res.json();
         setPoster(movie);
       } catch (error) {
@@ -41,7 +41,7 @@ const PosterInfo = () => {
     //Function to render TV show information depends on ID
     const getTvDetails = async (tvId) => {
       try {
-        const res = await fetch(`${API.baseURL}tv/${tvId}?api_key=${API.key}&append_to_response=videos,credits,images,keywords,external_ids,reviews`, { signal })
+        const res = await fetch(`${API.baseURL}tv/${tvId}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos,credits,images,keywords,external_ids,reviews`, { signal })
         const tv = await res.json();
         setPoster(tv);
       } catch (error) {

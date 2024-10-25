@@ -30,7 +30,7 @@ const ContainerMoviesTvs = () => {
     //Function to get movies and TV shows list
     (async function getList() {
       try {
-        const res = await fetch(`${API.baseURL}${parentPath === "movies" ? "movie" : "tv"}/${childPath}?api_key=${API.key}`,{signal})
+        const res = await fetch(`${API.baseURL}${parentPath === "movies" ? "movie" : "tv"}/${childPath}?api_key=${process.env.REACT_APP_API_KEY}`,{signal})
         const list = await res.json();
         setDataList(list.results);
       } catch (error) {
@@ -46,7 +46,7 @@ const ContainerMoviesTvs = () => {
     //Function to get genries list
     (async function getGenres () {
       try {
-        const res = await fetch(`${API.baseURL}genre/${parentPath === "movies" ? "movie" : "tv"}/list?api_key=${API.key}`,{signal})
+        const res = await fetch(`${API.baseURL}genre/${parentPath === "movies" ? "movie" : "tv"}/list?api_key=${process.env.REACT_APP_API_KEY}`,{signal})
         const genres = await res.json();
         setGenres(genres.genres);
       } catch (error) {

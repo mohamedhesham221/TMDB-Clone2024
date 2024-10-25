@@ -25,7 +25,7 @@ const Search = () => {
     //Function to render search result and filter it depends on media type
     (async function getQueryResult () {
       try {
-      const res = await fetch(`${API.baseURL}search/multi?query=${currentQuery}&include_adult=false&language=en-US&page=${pageNum}&api_key=${API.key}`,{signal});
+      const res = await fetch(`${API.baseURL}search/multi?query=${currentQuery}&include_adult=false&language=en-US&page=${pageNum}&api_key=${process.env.REACT_APP_API_KEY}`,{signal});
       const data = await res.json();
       setSearchResult(data.results)
       const categoryLens = {

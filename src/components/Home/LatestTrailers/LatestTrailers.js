@@ -34,8 +34,8 @@ const LatestTrailers = () => {
 
   useEffect(() => {
     const urls = [
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=${API.key}`,
-      `https://api.themoviedb.org/3/tv/popular?api_key=${API.key}`];
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}`,
+      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}`];
     Promise.all(urls.map(url => fetch(url).then(res => res.json()))).then(([movies, tvs]) => {
       const allItems = [movies.results, tvs.results].flat()
       // detecting a random poster items
@@ -48,7 +48,7 @@ const LatestTrailers = () => {
       // getting just 20 items
       const minimize = allItems.slice(0, 20)
       minimize.forEach((item) => {
-        fetch(`${API.baseURL}${item.release_date ? 'movie' : 'tv'}/${item.id}/videos?api_key=${API.key}`)
+        fetch(`${API.baseURL}${item.release_date ? 'movie' : 'tv'}/${item.id}/videos?api_key=${process.env.REACT_APP_API_KEY}`)
           .then((res) => res.json()).then((data) => {
             if (data.results.length !== 0) {
               setLatestTrailers(LatestTrailers => [...LatestTrailers, item])
