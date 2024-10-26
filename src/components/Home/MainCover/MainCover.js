@@ -15,7 +15,6 @@ const MainCover = () => {
   const inpRef = useRef();
   // Function to send search query to search page
   const toSearchPage = () => {
-    localStorage.setItem('searchQuery', searchQuery);
     setTimeout(() => {
       navigate('search')
     }, 500)
@@ -25,6 +24,10 @@ const MainCover = () => {
     changeSearchQuery(inpRef.current.value)
     setIsInputEmpty(true)
   }
+  useEffect(() => {
+    localStorage.setItem('searchQuery', searchQuery); //Store search query in localstorage
+  },[searchQuery])
+  
   useEffect(() => {
     const abortController = new AbortController();
     const signal = abortController.signal;

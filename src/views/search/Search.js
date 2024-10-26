@@ -20,8 +20,8 @@ const Search = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
-    if (localStorage.getItem("searchQuery") !== null) {
-      const storedQuery = localStorage.getItem("searchQuery")
+    const storedQuery = localStorage.getItem("searchQuery");
+    if (storedQuery) {
       setCurrentQuery(storedQuery)
     }
     const abortController = new AbortController();
@@ -49,7 +49,6 @@ const Search = () => {
         setIsLoading(false)
       }
     })()
-console.log(currentQuery)
     return () => {
       abortController.abort();
       setIsLoading(true);
