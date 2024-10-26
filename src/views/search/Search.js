@@ -10,7 +10,7 @@ const Search = () => {
   //Component logic ...
   const location = useLocation();
   const [searchResult, setSearchResult] = useState([]);
-  const [currentQuery, setCurrentQuery] = useState(localStorage.getItem('searchQuery'));
+  const [currentQuery, setCurrentQuery] = useState("");
   const inpRef = useRef('');
   const [pageNum, setPageNum] = useState(1);
   const [moviesNums, setMoviesNums] = useState(0);
@@ -20,6 +20,10 @@ const Search = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
+    if (localStorage.getItem("searchQuery") !== null) {
+      const storedQuery = localStorage.getItem("searchQuery")
+      setCurrentQuery(storedQuery)
+    }
     const abortController = new AbortController();
     const signal = abortController.signal;
     //Function to render search result and filter it depends on media type
@@ -45,7 +49,7 @@ const Search = () => {
         setIsLoading(false)
       }
     })()
-
+console.log(currentQuery)
     return () => {
       abortController.abort();
       setIsLoading(true);
