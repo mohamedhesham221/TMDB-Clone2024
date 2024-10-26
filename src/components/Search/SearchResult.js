@@ -17,7 +17,7 @@ const SearchResult = ({ mediaType, setMediaType, tvsNums, moviesNums, peopleNums
   //Component logic ....
   const profileActor = require('../../assets/imgs/user-glyph.svg').default;
   const blankPoster = require('../../assets/imgs/picture-glyph.svg').default;
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  // const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const navigate = useNavigate();
 
   //Function to send data for movie or TV show to its own page and replace space to - in URL 
@@ -31,7 +31,6 @@ const SearchResult = ({ mediaType, setMediaType, tvsNums, moviesNums, peopleNums
       }
     })
   }
-
   return (
     <>
       <div className="search-result">
@@ -65,7 +64,11 @@ const SearchResult = ({ mediaType, setMediaType, tvsNums, moviesNums, peopleNums
                     </div>
                     <div className="card-content">
                       <p className="card-content-title">{item.name}</p>
-                      <p className="card-content-release">{`${months[new Date(item.first_air_date).getMonth()]} ${new Date(item.first_air_date).getDay()}, ${new Date(item.first_air_date).getFullYear()}`}</p>
+                      <p className="card-content-release">{`${item.first_air_date && new Intl.DateTimeFormat('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      }).format(new Date(item.first_air_date+"T00:00:00"))}`}</p>
                       <p className="card-content-overview">{!item.overview ? "" : item.overview.slice(0, 65) + "..."}</p>
                     </div>
                   </div>
@@ -80,8 +83,12 @@ const SearchResult = ({ mediaType, setMediaType, tvsNums, moviesNums, peopleNums
                       </div>
                       <div className="card-content">
                         <p className="card-content-title">{item.title}</p>
-                        <p className="card-content-release">{`${months[new Date(item.release_date).getMonth()]} ${new Date(item.release_date).getDay()}, ${new Date(item.release_date).getFullYear()}`}</p>
-                        <p className="card-content-overview">{!item.overview ? "" : item.overview.slice(0, 65) + "..."}</p>
+                        <p className="card-content-release">{`${item.release_date && new Intl.DateTimeFormat('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      }).format(new Date(item.release_date+"T00:00:00"))}`}</p>   
+                            <p className="card-content-overview">{!item.overview ? "" : item.overview.slice(0, 65) + "..."}</p>
                       </div>
                     </div>
                   </article>

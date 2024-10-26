@@ -10,7 +10,7 @@ const Search = () => {
   //Component logic ...
   const location = useLocation();
   const [searchResult, setSearchResult] = useState([]);
-  const [currentQuery, setcurrentQuery] = useState(location.state?.query);
+  const [currentQuery, setCurrentQuery] = useState(localStorage.getItem('searchQuery'));
   const inpRef = useRef('');
   const [pageNum, setPageNum] = useState(1);
   const [moviesNums, setMoviesNums] = useState(0);
@@ -50,10 +50,11 @@ const Search = () => {
       abortController.abort();
       setIsLoading(true);
     }
-  }, [pageNum, moviesNums, tvsNums, peopleNums, currentQuery])
+  }, [pageNum, moviesNums, tvsNums, peopleNums, currentQuery, location.state?.query])
   //Function to update search query 
   const getInputVal = () => {
-    setcurrentQuery(inpRef.current.value)
+    localStorage.setItem('searchQuery', inpRef.current.value);
+    setCurrentQuery(inpRef.current.value)
   }
   return (
     <>

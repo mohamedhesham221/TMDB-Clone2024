@@ -9,19 +9,18 @@ const MainCover = () => {
   const [searchQuery, changeSearchQuery] = useState('');
   const [isInputEmpty, setIsInputEmpty] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] =  useState(null);
+  const [error, setError] = useState(null);
   const defaultCover = require("../../../assets/imgs/cover.jpg")
   const navigate = useNavigate();
   const inpRef = useRef();
   // Function to send search query to search page
   const toSearchPage = () => {
-    navigate('search', {
-      state: {
-        query: searchQuery
-      }
-    })
+    localStorage.setItem('searchQuery', searchQuery);
+    setTimeout(() => {
+      navigate('search')
+    }, 500)
   }
-  //Function to cjange search query value
+  //Function to change search query value
   const changeInputVal = () => {
     changeSearchQuery(inpRef.current.value)
     setIsInputEmpty(true)
@@ -31,7 +30,7 @@ const MainCover = () => {
     const signal = abortController.signal;
     (async function fetchData() {
       try {
-        const res = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`,{signal});
+        const res = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`, { signal });
         const data = await res.json();
         const randomPath = Math.floor(Math.random() * data.results.length);
         // setting random background path
@@ -52,13 +51,14 @@ const MainCover = () => {
       <div className="main-cover">
         <div className="cover-container">
           <div className='cover'
-            style={{ 
+            style={{
               background: `no-repeat center / cover 
               url(${!isLoading || error !== null ?
-                API.backdropURL + path.backdrop_path 
-              :
-              defaultCover
-              })` }}></div>
+                  API.backdropURL + path.backdrop_path
+                  :
+                  defaultCover
+                })`
+            }}></div>
         </div>
         <div className="first-layer">
           <section>
@@ -72,7 +72,7 @@ const MainCover = () => {
                 <input type="text" placeholder="Search..." ref={inpRef} onChange={() => changeInputVal()} />
               </fieldset>
               <button type="submit">
-                <Link to={!isInputEmpty? '/': 'search'}>Search</Link>
+                <Link to={!isInputEmpty ? '/' : 'search'}>Search</Link>
               </button>
             </form>
           </section>
