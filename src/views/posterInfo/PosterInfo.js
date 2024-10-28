@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import API from '../../Variables/vars';
 import Trailer from '../../components/Trailer/Trailer';
-import FooterComp from "../../components/Footer/FooterComp";
 const PosterDetails = React.lazy(() => import("../../components/Poster/PosterDetails"))
 //This component displays a specific poster information
 const PosterInfo = () => {
@@ -120,7 +119,6 @@ const PosterInfo = () => {
         </div>
       </main>
       <Trailer trailer={trailer} isPlay={isPlay} setPlayStatue={setPlayStatue} />
-      <FooterComp />
 
     </>
   )

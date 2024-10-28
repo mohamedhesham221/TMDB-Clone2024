@@ -2,7 +2,6 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import MoviesTVsList from "../../components/MoviesTvs/MoviesTVsList";
 import API from "../../Variables/vars";
-import FooterComp from "../../components/Footer/FooterComp";
 
 //Component to render movies and TV shows data depends on params in URL
 const ContainerMoviesTvs = () => {
@@ -69,7 +68,6 @@ const ContainerMoviesTvs = () => {
       <MoviesTVsList dataList={dataList} genres = {genresArr} parentPath={parentPath} error={error} isLoading={isLoading}/>
       </div>
     </main>
-    <FooterComp />
     </>
   )
 }

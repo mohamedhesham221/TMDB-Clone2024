@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import API from "../../Variables/vars";
-import FooterComp from "../../components/Footer/FooterComp";
+// import FooterComp from "../../components/Footer/FooterComp";
 import Pagination from "../../components/Pagination/Pagination";
 import PopularPeople from "../../components/People/PopularPeople";
 //Component to render people page
@@ -41,7 +41,6 @@ const People = () => {
         <PopularPeople popularPeople={popularPeople} error={error} isLoading={isLoading} />
       </main>
       <Pagination pageNum={pageNum} setPageNum={setPageNum} />
-      <FooterComp />
 
     </>
   )
