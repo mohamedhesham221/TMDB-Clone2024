@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import API from '../../Variables/vars';
-import FooterComp from '../../components/Footer/FooterComp';
 import Pagination from "../../components/Pagination/Pagination";
 import SearchForm from "../../components/Search/SearchForm";
 import SearchResult from "../../components/Search/SearchResult";
@@ -67,7 +66,6 @@ const Search = () => {
           tvsNums={tvsNums} moviesNums={moviesNums}
           peopleNums={peopleNums} searchResult={searchResult} error={error} isLoading={isLoading} />
         <Pagination pageNum={pageNum} setPageNum={setPageNum} />
-        <FooterComp />
       </div>
     </>
   )
