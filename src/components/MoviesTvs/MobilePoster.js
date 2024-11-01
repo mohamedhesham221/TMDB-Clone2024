@@ -20,19 +20,18 @@ const MobilePoster = ({ imgPath, poster, parentPath }) => {
       }
     })
   }
-
   return (
     <>
       <article>
         <div className="card" onClick={() => getDetails()}>
           <div className="card-image">
-            <img src={imgPath + poster.poster_path} alt={parentPath === "tv" ? poster.name : poster.title + "'s poster"} />
+            <img src={imgPath + poster.poster_path} alt={parentPath === "tv_shows" ? poster.name + "'s poster" : poster.title + "'s poster"} />
           </div>
           <div className="card-content">
-            <p className="card-content-title">{parentPath === "tv" ? poster.name : poster.title}</p>
-            <p className="card-content-release">{`${months[new Date(parentPath === "tv" ? poster.first_air_date : poster.release_date).getMonth()]}
-                                                          ${new Date(parentPath === "tv" ? poster.first_air_date : poster.release_date).getDate() + 1},
-                                                          ${new Date(parentPath === "tv" ? poster.first_air_date : poster.release_date).getFullYear()}`}</p>
+            <p className="card-content-title">{parentPath === "tv_shows" ? poster.name : poster.title}</p>
+            <p className="card-content-release">{`${months[new Date(parentPath === "tv_shows" ? poster.first_air_date : poster.release_date).getMonth()]}
+                                                          ${new Date(parentPath === "tv_shows" ? poster.first_air_date : poster.release_date).getDate() + 1},
+                                                          ${new Date(parentPath === "tv_shows" ? poster.first_air_date : poster.release_date).getFullYear()}`}</p>
             <p className="card-content-overview">{!poster.overview ? "" : poster.overview.slice(0, 65) + "..."}</p>
           </div>
         </div>
