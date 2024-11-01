@@ -128,9 +128,7 @@ fieldset {
 }
 
 .genres-button button:hover {
-  background-color: #00c2e9 !important;
   border: 1px solid #00c2e9 !important;
-  color: #fff;
 }
 
 .active-btn {
