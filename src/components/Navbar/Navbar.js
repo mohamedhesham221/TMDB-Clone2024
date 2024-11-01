@@ -30,7 +30,7 @@ const Navbar = () => {
         nav.classList.remove('fixedNav')
       }
     }
-
+    
   return (
     <>
       <nav className="navbar">
