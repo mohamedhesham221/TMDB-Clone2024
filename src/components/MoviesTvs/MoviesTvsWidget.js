@@ -23,7 +23,7 @@ const MoviesTVsWidget = ({ inptRef, genres, isActive, setIsActive, setSelectVal,
   const [minValue, set_minValue] = useState(0);
   const [maxValue, set_maxValue] = useState(10);
   const [isDisabled, changeIsDisable] = useState(true);
-
+  let currParentPath;
   //Function to handle select options
   const handleSelectChange = (e) => {
     setSelectVal(e.target.value);
@@ -36,16 +36,59 @@ const MoviesTVsWidget = ({ inptRef, genres, isActive, setIsActive, setSelectVal,
   const handleEndDate = (e) => {
     setEndDate(e.target.value)
   }
-  // Function to filter data depends on dates 
-  const filterByDate = () => {
-    setFilterPosters(dataList.filter(el => parentPath === "tv_shows" ?
-      Date(el.first_air_date) >= new Date(startDate)
-      && Date(el.first_air_date) <= new Date(endDate)
-      :
-      new Date(el.release_date) >= new Date(startDate)
-      && new Date(el.release_date) <= new Date(endDate)
-    ))
+      //Function to get genre and filter data depends on genres
+      const addBtnID = (id) => {
+        genresID.includes(id) ?
+          genresID.splice(genresID.indexOf(id), 1)          :
+          setGenresID(genresID => [...genresID, id])
+      }
+      const handleInputRange = (e) => {
+        set_minValue(e.minValue);
+        set_maxValue(e.maxValue);
+        if (minValue > 0 || maxValue < 10) changeIsDisable(false)
+      };
+  // Function to do filter on data that come from api
+  const doFilter = () => {
+    if (!dataList || !dataList.length) {
+      console.error("Data list is empty or undefined");
+      return;
+    }
+    let filteredData = dataList;
+    
+    // Apply date filter if dates are valid
+    if (startDate && endDate) {
+      filteredData = filteredData.filter(el => {
+        const date = parentPath === "tv_shows" ? el.first_air_date : el.release_date;
+        if (!date) return false; // Skip if no date field in data
+        const itemDate = new Date(date);
+        return itemDate >= new Date(startDate) && itemDate <= new Date(endDate);
+      });
+    }
+    // console.log("data after filter date", filteredData)
+
+        //Filter By Genres
+    if (genresID.length) {
+      filteredData = filteredData.filter(el => el.genre_ids.some(id => genresID.includes(id)))
+    }
+        // console.log("data after filter genres", filteredData)
+        //Filter By Scores
+        if (minValue >= 0 && maxValue <= 10) {
+          filteredData = filteredData.filter(el => {
+            const score = el.vote_average;
+            return score >= minValue && score <= maxValue;
+          });
+        }  
+        // console.log("data after filter scores", filteredData)
+        setFilterPosters(filteredData)
+        currParentPath = parentPath;
+        resetFilters();
   }
+  const resetFilters = () => {
+    setStartDate('');
+    setGenresID([]);
+    set_minValue(0);
+    set_maxValue(10);
+  };
   useEffect(() => {
     function currentDateFormat() {
       const YYYY = new Date().getFullYear();
@@ -56,41 +99,16 @@ const MoviesTVsWidget = ({ inptRef, genres, isActive, setIsActive, setSelectVal,
     }
     currentDateFormat()
   }, [])
-
-  //Function to get genre and filter data depends on genres
-  const addBtnID = (id) => {
-    if (genresID.includes(id)) {
-      genresID.splice(genresID.indexOf(id), 1);
-    } else {
-      setGenresID(genresID => [...genresID, id])
-    }
-  }
-  const filterByGenre = () => {
-    if (genresID.length) {
-      setFilterPosters(dataList.filter(el => el.genre_ids.find(id => genresID.includes(id))))
-    }
-  }
   useEffect(() => {
     if (genresID.length) {
       changeIsDisable(false)
     }
   }, [genresID.length])
-  // Functions to handle and filter data depends on average score
-  const handleInputRange = (e) => {
-    set_minValue(e.minValue);
-    set_maxValue(e.maxValue);
-    if (minValue > 0 || maxValue < 10) changeIsDisable(false)
-  };
-  const filterByScore = () => {
-    setFilterPosters(dataList.filter(el => el.vote_average >= minValue && el.vote_average <= maxValue))
-    console.log("scoreFilter run")
-  }
-//Function to run filter
-  const doFilter = () => {
-    filterByDate();
-    filterByGenre()
-    filterByScore();
-  }
+  useEffect(() => {
+    if (currParentPath !== parentPath) {
+      setFilterPosters('')
+    }
+  },[currParentPath,parentPath, setFilterPosters])
   return (
     <>
       <div className="widget-filter">
@@ -100,7 +118,7 @@ const MoviesTVsWidget = ({ inptRef, genres, isActive, setIsActive, setSelectVal,
               <FontAwesomeIcon icon={faChevronRight}
                 color="#000" className={`glyph-icon ${panelSortState ? 'sort-chev-rotate' : ''}`} onClick={() => setPanelSortState(!panelSortState)} />
             </p>
-            <hr className="sorting-divide"/>
+            <hr className="sorting-divide" />
             <p>Sort Results By</p>
             <select value={selectVal} onChange={handleSelectChange}>
               <option value="popularity-ascending">Popularity Ascending</option>
@@ -118,20 +136,20 @@ const MoviesTVsWidget = ({ inptRef, genres, isActive, setIsActive, setSelectVal,
               <FontAwesomeIcon icon={faChevronRight}
                 color="#000" className={`glyph-icon ${panelFilterState ? 'filter-chev-rotate' : ''}`} onClick={() => setPanelFilterState(!panelFilterState)} />
             </p>
-            <hr className="filter-divide"/>
+            <hr className="filter-divide" />
             <p>Release Dates</p>
             <form className="date-range">
               <fieldset>
                 <div className="from">
                   <label htmlFor="start-date">from</label>
-                  <input type="date" id="start-date" name="from-date" ref={inptRef} onChange={handleStartDate} />
+                  <input type="date" id="start-date" name="from-date" value={startDate} ref={inptRef} onChange={handleStartDate} />
                 </div>
                 <div className="to">
                   <label htmlFor="end-date">to</label>
                   <input type="date" id="end-date" name="to-date" value={endDate} onChange={handleEndDate} />
                 </div>
               </fieldset>
-              <hr className="dates-divide"/>
+              <hr className="dates-divide" />
             </form>
             <div className="genres">
               <p>Genres</p>
@@ -151,7 +169,7 @@ const MoviesTVsWidget = ({ inptRef, genres, isActive, setIsActive, setSelectVal,
                   })
                 }
               </div>
-              <hr className="genres-divide"/>
+              <hr className="genres-divide" />
             </div>
             <div className="user-score">
               <p>User Score</p>
